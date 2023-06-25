@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { useAppContext } from "../context/appContext";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeitem } from "../Utils/Cartslice";
-import { FaTrash } from "react-icons/fa";
 import Checkout from "./Checkout";
 
 const Cart = () => {

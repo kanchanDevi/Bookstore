@@ -2,7 +2,6 @@ import axios from 'axios'
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { DETAIL_URL } from '../constant'
-import { useAppContext } from '../context/appContext';
 import { addItem } from '../Utils/Cartslice';
 import { useDispatch } from "react-redux";
 
@@ -12,17 +11,13 @@ const BookDetails=()=>{
   const [book, setBook]=useState()
 
   const {id}=useParams()
-  const {cart, addtoCart, removeFromCart}= useAppContext()
 
   const dispatch = useDispatch();
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
 
-const addCart=(id)=>{
-  const bool=cart.some((book)=>book.id===id);
-  return bool
-}
+
   useEffect(()=>{
     axios.get(`${DETAIL_URL}/${id}`).then(res=>{
       setBook(res.data);

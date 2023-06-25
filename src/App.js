@@ -9,6 +9,7 @@ import UserContext from "./Utils/UserContext";
 
 import { Provider } from "react-redux";
 import store from "./Utils/store";
+import Checkout from "./components/Checkout";
 
 const HeaderLayout = () => {
   return (
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: "/books/:id",
         element: <BookDetails />,
       },
+      {
+        path:'/checkout',
+        element:<Checkout/>
+      }
     
     ],
   },

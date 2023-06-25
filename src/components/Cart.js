@@ -3,6 +3,7 @@ import { useAppContext } from "../context/appContext";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeitem } from "../Utils/Cartslice";
 import { FaTrash } from "react-icons/fa";
+import Checkout from "./Checkout";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -47,8 +48,9 @@ const Cart = () => {
           className="justify-end items-center hover:bg-gray-800 bg-black text-white w-[200px] p-3 m-2 rounded-lg"
           onClick={(id) => handleRemoveItem(book.id)}
         > Remove Item</button>
-             
+               <Checkout/>
             </div>
+          
         ))}
         <button
           className="justify-end items-center hover:bg-gray-800 bg-black text-white w-[200px] p-3 m-2 rounded-lg"
